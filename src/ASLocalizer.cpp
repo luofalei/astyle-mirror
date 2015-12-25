@@ -1,4 +1,4 @@
-//
+﻿//
 //  FILE ENCODING IS UTF-8 WITHOUT A BOM.
 //  русский    中文（简体）    日本    한국의
 //
@@ -42,6 +42,10 @@
 //----------------------------------------------------------------------------
 
 #include "ASLocalizer.h"
+
+#ifdef _MSC_VER
+#include <locale.h>
+#endif
 
 #ifdef _WIN32
 	#include <windows.h>
@@ -408,14 +412,14 @@ ChineseSimplified::ChineseSimplified()	// 中文（简体）
 	addPair("Opening HTML documentation %s\n", L"打开HTML文档 %s\n");
 	addPair("Invalid option file options:", L"无效的配置文件选项:");
 	addPair("Invalid command line options:", L"无效的命令行选项:");
-	addPair("For help on options type 'astyle -h'", L"输入 'astyle -h' 以获得有关命令行的帮助");
+	addPair("For help on options type 'astyle -h'", L"输入 'astyle -h' 以获得有关命令行的帮助 ");
 	addPair("Cannot open options file", L"无法打开配置文件");
 	addPair("Cannot open directory", L"无法打开目录");
 	addPair("Cannot open HTML file %s\n", L"无法打开HTML文件 %s\n");
 	addPair("Command execute failure", L"执行命令失败");
-	addPair("Command is not installed", L"未安装命令");
+	addPair("Command is not installed", L"未安装命令 ");
 	addPair("Missing filename in %s\n", L"在%s缺少文件名\n");
-	addPair("Recursive option with no wildcard", L"递归选项没有通配符");
+	addPair("Recursive option with no wildcard", L"递归选项没有通配符 ");
 	addPair("Did you intend quote the filename", L"你打算引用文件名");
 	addPair("No file to process %s\n", L"没有文件可处理 %s\n");
 	addPair("Did you intend to use --recursive", L"你打算使用 --recursive");
@@ -443,9 +447,9 @@ ChineseTraditional::ChineseTraditional()	// 中文（繁體）
 	addPair("Cannot open directory", L"無法打開目錄");
 	addPair("Cannot open HTML file %s\n", L"無法打開HTML文件 %s\n");
 	addPair("Command execute failure", L"執行命令失敗");
-	addPair("Command is not installed", L"未安裝命令");
+	addPair("Command is not installed", L"未安裝命令 ");
 	addPair("Missing filename in %s\n", L"在%s缺少文件名\n");
-	addPair("Recursive option with no wildcard", L"遞歸選項沒有通配符");
+	addPair("Recursive option with no wildcard", L"遞歸選項沒有通配符 ");
 	addPair("Did you intend quote the filename", L"你打算引用文件名");
 	addPair("No file to process %s\n", L"沒有文件可處理 %s\n");
 	addPair("Did you intend to use --recursive", L"你打算使用 --recursive");
@@ -603,11 +607,11 @@ Hindi::Hindi()	// हिन्दी
 	addPair("Cannot open options file", L"विकल्प फ़ाइल नहीं खोल सकता है");
 	addPair("Cannot open directory", L"निर्देशिका नहीं खोल सकता");
 	addPair("Cannot open HTML file %s\n", L"HTML फ़ाइल नहीं खोल सकता %s\n");
-	addPair("Command execute failure", L"आदेश विफलता निष्पादित");
+	addPair("Command execute failure", L"आदेश विफलता निष्पादित ");
 	addPair("Command is not installed", L"कमान स्थापित नहीं है");
 	addPair("Missing filename in %s\n", L"लापता में फ़ाइलनाम %s\n");
 	addPair("Recursive option with no wildcard", L"कोई वाइल्डकार्ड साथ पुनरावर्ती विकल्प");
-	addPair("Did you intend quote the filename", L"क्या आप बोली फ़ाइलनाम का इरादा");
+	addPair("Did you intend quote the filename", L"क्या आप बोली फ़ाइलनाम का इरादा ");
 	addPair("No file to process %s\n", L"कोई फ़ाइल %s प्रक्रिया के लिए\n");
 	addPair("Did you intend to use --recursive", L"क्या आप उपयोग करना चाहते हैं --recursive");
 	addPair("Cannot process UTF-32 encoding", L"UTF-32 कूटबन्धन प्रक्रिया नहीं कर सकते");
@@ -660,7 +664,7 @@ Japanese::Japanese()	// 日本
 	addPair("Opening HTML documentation %s\n", L"HTML文書を開く %s\n");
 	addPair("Invalid option file options:", L"無効なコンフィギュレーションファイルオプション：");
 	addPair("Invalid command line options:", L"無効なコマンドラインオプション：");
-	addPair("For help on options type 'astyle -h'", L"コマンドラインについてのヘルプは'astyle- h'を入力してください");
+	addPair("For help on options type 'astyle -h'", L"コマンドラインについてのヘルプは'astyle- h'を入力してください ");
 	addPair("Cannot open options file", L"コンフィギュレーションファイルを開くことができません");
 	addPair("Cannot open directory", L"ディレクトリのオープンに失敗しました");
 	addPair("Cannot open HTML file %s\n", L"HTMLファイルを開くことができません %s\n");
@@ -671,8 +675,8 @@ Japanese::Japanese()	// 日本
 	addPair("Did you intend quote the filename", L"あなたは、ファイル名を参照するつもり");
 	addPair("No file to process %s\n", L"いいえファイルは処理できません %s\n");
 	addPair("Did you intend to use --recursive", L"あなたが使用する予定 --recursive");
-	addPair("Cannot process UTF-32 encoding", L"UTF- 32エンコーディングを処理できない");
-	addPair("\nArtistic Style has terminated", L"\nArtistic Style 実行が終了しました");
+	addPair("Cannot process UTF-32 encoding", L"UTF- 32エンコーディングを処理できない ");
+	addPair("\nArtistic Style has terminated", L"\nArtistic Style 実行が終了しました ");
 }
 
 Korean::Korean()	// 한국의
@@ -690,9 +694,9 @@ Korean::Korean()	// 한국의
 	addPair("Opening HTML documentation %s\n", L"HTML 문서를 열기 %s\n");
 	addPair("Invalid option file options:", L"잘못된 구성 파일 옵션 :");
 	addPair("Invalid command line options:", L"잘못된 명령줄 옵션 :");
-	addPair("For help on options type 'astyle -h'", L"도움말을 보려면 옵션 유형 'astyle - H'를 사용합니다");
+	addPair("For help on options type 'astyle -h'", L"도움말을 보려면 옵션 유형 'astyle - H'를 사용합니다 ");
 	addPair("Cannot open options file", L"구성 파일을 열 수 없습니다");
-	addPair("Cannot open directory", L"디렉토리를 열지 못했습니다");
+	addPair("Cannot open directory", L"디렉토리를 열지 못했습니다 ");
 	addPair("Cannot open HTML file %s\n", L"HTML 파일을 열 수 없습니다 %s\n");
 	addPair("Command execute failure", L"명령 실패를 실행");
 	addPair("Command is not installed", L"명령이 설치되어 있지 않습니다");
@@ -702,7 +706,7 @@ Korean::Korean()	// 한국의
 	addPair("No file to process %s\n", L"처리할 파일이 없습니다 %s\n");
 	addPair("Did you intend to use --recursive", L"--recursive 를 사용하고자 하십니까");
 	addPair("Cannot process UTF-32 encoding", L"UTF-32 인코딩을 처리할 수 없습니다");
-	addPair("\nArtistic Style has terminated", L"\nArtistic Style를 종료합니다");
+	addPair("\nArtistic Style has terminated", L"\nArtistic Style를 종료합니다 ");
 }
 
 Polish::Polish()	// Polski
